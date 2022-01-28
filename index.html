@@ -16,26 +16,59 @@
 </head>
 <body>
 
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
+  <main>
+    <article class="tip-calculator">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="SPLITTER" class="logo__image">
+      </div>
+      <div class="money-input">
+        <span class="money-input__title">Bill</span>
+        <img src="./images/icon-dollar.svg" alt="$" class="money-input__icon">
+        <input type="number" name="bill" autofocus placeholder="0.00" value="0" class="money-input__form">
+      </div>
+      <div class="tip-selector">
+        <span class="tip-selector__title">Select Tip %</span>
+        <ul class="tip-selector__tip-list">
+          <li class="tip-selector__tip-list__list-item">
+            <button class="tip">5%</button>
+          </li>
+          <li class="tip-selector__tip-list__list-item">
+            <button class="tip">10%</button>
+          </li>
+          <li class="tip-selector__tip-list__list-item">
+            <button class="tip">15%</button>
+          </li>
+          <li class="tip-selector__tip-list__list-item">
+            <button class="tip">25%</button>
+          </li>
+          <li class="tip-selector__tip-list__list-item">
+            <button class="tip">50%</button>
+          </li>
+          <li class="tip-selector__tip-list__list-item">
+            <button class="tip">Custom</button>
+          </li>
+        </ul>
+      </div>
+      <div class="people-input">
+        <span class="people-input__title">Number of People</span>
+        <img src="./images/icon-person.svg" alt="" class="people-input__icon">
+        <input type="number" name="people" placeholder="0" value="0" class="people-input__form">
+      </div>
+      <div class="result">
+        <div class="tip-amount">
+          <span class="tip-amount__title">Tip amount <em>/ person</em></span>
+          <img src="./images/icon-dollar.svg" alt="$" class="tip-amount__icon">
+          <span class="tip-amount__result">0.00</span>
+        </div>
+        <div class="total-amount">
+          <span class="total-amount__title">Total <em>/ person</em></span>
+          <img src="./images/icon-dollar.svg" alt="$" class="total-amount__icon">
+          <span class="total-amount__result">0.00</span>
+        </div>
+        <button class="reset">Reset</button>
+      </div>
+    </article>
+  </main>  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
