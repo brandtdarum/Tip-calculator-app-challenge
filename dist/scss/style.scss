@@ -1,0 +1,219 @@
+@import "reset";
+@import "functions";
+
+body {
+    background-color: get-neutral(4);
+}
+
+main {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+span, em{
+    padding-bottom: 10px;
+
+    font-family: get-font-family();
+    font-weight: get-font-weight("bold");
+
+    color: get-neutral(3);
+    flex: 1 1 100%;
+}
+
+button, .custom-tip  {
+    width: 100%;
+    padding: 5px;
+    border: 0px;
+    border-radius: 5px;
+
+    font-family: get-font-family();
+    font-weight: get-font-weight("bold");
+    font-size: 24px;
+    color: get-neutral(6);
+    background-color: get-neutral(1);
+}
+
+input:focus {
+    outline: get-primary() solid 2px;
+}
+
+.logo {
+    margin: 30px;
+}
+
+
+
+.tip-calculator {
+    width: get-width("mobile");
+    padding: 30px;
+    border-radius: 25px;
+    overflow: hidden;
+
+    background-color: get-neutral(6);
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+
+    button:hover {
+        color: get-neutral(1);
+        background-color: get-neutral(5);
+    }
+
+    button:active{
+        color: get-neutral(1);
+        background-color: get-neutral(4);
+    }
+
+    .tip.checked {
+        color: get-neutral(1);
+        background-color: get-primary();
+    }
+}
+
+.money-input, .people-input {
+    flex: 1 1 100%;
+
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.money-input__form, .people-input__form {
+    width: 100%;
+    background: get-neutral(5) url("./../../images/icon-dollar.svg") 10px center no-repeat;
+    text-align: right;
+    border: black none 0px;
+    border-radius: 5px;
+    padding: 5px 10px;
+
+    font-family: get-font-family();
+    font-weight: get-font-weight("bold");
+    font-size: 24px;
+
+    color: get-neutral(1);
+}
+
+.tip-selector {
+    flex: 1 1 100%;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.tip-selector__tip-list {
+    padding: 0px;
+    width: 100%;
+
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.tip-selector__tip-list__list-item {
+    list-style: none;
+}
+
+.custom-tip {
+    color: get-neutral(1);
+    background-color: get-neutral(5);
+    text-align: right;
+}
+
+.custom-tip::placeholder {
+    text-align: center;
+}
+
+.people-input__form {
+    background: get-neutral(5) url("./../../images/icon-person.svg") 10px center no-repeat;
+}
+
+.result {
+    width: 100%;
+    border-radius: 15px;
+    padding: 20px;
+    padding-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: get-neutral(1);
+
+    button {
+        background-color: get-primary();
+        color: get-neutral(1);
+    }
+}
+
+.tip-amount, .total-amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tip-amount__title, .total-amount__title {
+    font-size: 18px;
+    color: get-neutral(6);
+
+    em {
+        font-size: 14px;
+        font-style: normal;
+        display: block;
+    }
+}
+
+.tip-amount__result, .total-amount__result {
+    color: get-primary();
+
+    text-align: right;
+    font-size: 35px;
+}
+
+
+@media only screen and (min-width: get-width("desktop")) {
+    .tip-calculator {
+        width: 900px;
+        height: 500px;
+
+        flex-flow: column wrap;
+        gap: auto;
+    }
+
+    .money-input, .tip-selector, .people-input {
+        width: calc(50% - 30px);
+
+        flex: 0 1 20%;
+    }
+
+    .tip-selector__tip-list {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .result {
+        width: calc(50% - 30px);
+        height: 100%;
+    }
+
+    .result {
+        padding: 50px;
+
+        button {
+            margin-top: auto;
+        }
+    }
+
+    .tip-amount__result, .total-amount__result {
+        font-size: 50px;
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

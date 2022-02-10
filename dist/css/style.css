@@ -1,0 +1,254 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/*
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Strong cyan: hsl(172, 67%, 45%)
+
+### Neutral
+
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Dark grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (form inputs): 24px
+
+### Font
+
+- Family: [Space Mono](https://fonts.google.com/specimen/Space+Mono)
+- Weights: 400, 500, 700
+*/
+/* COLORS */
+/* FONT */
+/* GET FUNCTIONS */
+body {
+  background-color: #c5e4e7;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+span, em {
+  padding-bottom: 10px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: #7f9c9f;
+  flex: 1 1 100%;
+}
+
+button, .custom-tip {
+  width: 100%;
+  padding: 5px;
+  border: 0px;
+  border-radius: 5px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  background-color: #00494d;
+}
+
+input:focus {
+  outline: #26c0ab solid 2px;
+}
+
+.logo {
+  margin: 30px;
+}
+
+.tip-calculator {
+  width: 375px;
+  padding: 30px;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+.tip-calculator button:hover {
+  color: #00494d;
+  background-color: #f4fafa;
+}
+.tip-calculator button:active {
+  color: #00494d;
+  background-color: #c5e4e7;
+}
+.tip-calculator .tip.checked {
+  color: #00494d;
+  background-color: #26c0ab;
+}
+
+.money-input, .people-input {
+  flex: 1 1 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.money-input__form, .people-input__form {
+  width: 100%;
+  background: #f4fafa url("./../../images/icon-dollar.svg") 10px center no-repeat;
+  text-align: right;
+  border: black none 0px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: #00494d;
+}
+
+.tip-selector {
+  flex: 1 1 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.tip-selector__tip-list {
+  padding: 0px;
+  width: 100%;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.tip-selector__tip-list__list-item {
+  list-style: none;
+}
+
+.custom-tip {
+  color: #00494d;
+  background-color: #f4fafa;
+  text-align: right;
+}
+
+.custom-tip::placeholder {
+  text-align: center;
+}
+
+.people-input__form {
+  background: #f4fafa url("./../../images/icon-person.svg") 10px center no-repeat;
+}
+
+.result {
+  width: 100%;
+  border-radius: 15px;
+  padding: 20px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: #00494d;
+}
+.result button {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+
+.tip-amount, .total-amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tip-amount__title, .total-amount__title {
+  font-size: 18px;
+  color: white;
+}
+.tip-amount__title em, .total-amount__title em {
+  font-size: 14px;
+  font-style: normal;
+  display: block;
+}
+
+.tip-amount__result, .total-amount__result {
+  color: #26c0ab;
+  text-align: right;
+  font-size: 35px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .tip-calculator {
+    width: 900px;
+    height: 500px;
+    flex-flow: column wrap;
+    gap: auto;
+  }
+
+  .money-input, .tip-selector, .people-input {
+    width: calc(50% - 30px);
+    flex: 0 1 20%;
+  }
+
+  .tip-selector__tip-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .result {
+    width: calc(50% - 30px);
+    height: 100%;
+  }
+
+  .result {
+    padding: 50px;
+  }
+  .result button {
+    margin-top: auto;
+  }
+
+  .tip-amount__result, .total-amount__result {
+    font-size: 50px;
+  }
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+/*# sourceMappingURL=style.css.map */

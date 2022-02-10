@@ -9,63 +9,58 @@
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="./dist/css/style.css">
 </head>
 <body>
-
   <main>
+    <div class="logo">
+      <img src="./images/logo.svg" alt="SPLITTER" class="logo__image">
+    </div>
     <article class="tip-calculator">
-      <div class="logo">
-        <img src="./images/logo.svg" alt="SPLITTER" class="logo__image">
-      </div>
       <div class="money-input">
         <span class="money-input__title">Bill</span>
-        <img src="./images/icon-dollar.svg" alt="$" class="money-input__icon">
-        <input type="number" name="bill" autofocus placeholder="0.00" value="0" class="money-input__form">
+        <input id="money-input" type="text" maxlength="12" name="bill" autofocus placeholder="0.00" oninput="money_input(this.value)" class="money-input__form">
       </div>
       <div class="tip-selector">
         <span class="tip-selector__title">Select Tip %</span>
         <ul class="tip-selector__tip-list">
           <li class="tip-selector__tip-list__list-item">
-            <button class="tip">5%</button>
+            <button class="tip" value= "5%" onclick="tip_input(this.value, this)">5%</button>
           </li>
           <li class="tip-selector__tip-list__list-item">
-            <button class="tip">10%</button>
+            <button class="tip" value= "10%" onclick="tip_input(this.value, this)">10%</button>
           </li>
           <li class="tip-selector__tip-list__list-item">
-            <button class="tip">15%</button>
+            <button class="tip" value= "15%" onclick="tip_input(this.value, this)">15%</button>
           </li>
           <li class="tip-selector__tip-list__list-item">
-            <button class="tip">25%</button>
+            <button class="tip" value= "25%" onclick="tip_input(this.value, this)">25%</button>
           </li>
           <li class="tip-selector__tip-list__list-item">
-            <button class="tip">50%</button>
+            <button class="tip" value= "50%" onclick="tip_input(this.value, this)">50%</button>
           </li>
           <li class="tip-selector__tip-list__list-item">
-            <button class="tip">Custom</button>
+            <input id="tip-input" type="text" name="bill" placeholder="Custom" class="custom-tip" maxlength="4" oninput="tip_input(this.value, null)">
           </li>
         </ul>
       </div>
       <div class="people-input">
         <span class="people-input__title">Number of People</span>
-        <img src="./images/icon-person.svg" alt="" class="people-input__icon">
-        <input type="number" name="people" placeholder="0" value="0" class="people-input__form">
+        <input id = "people-input" type="text" name="people" placeholder="0" class="people-input__form" maxlength="3" oninput="people_input(this.value)">
       </div>
       <div class="result">
         <div class="tip-amount">
           <span class="tip-amount__title">Tip amount <em>/ person</em></span>
-          <img src="./images/icon-dollar.svg" alt="$" class="tip-amount__icon">
-          <span class="tip-amount__result">0.00</span>
+          <span id="tip-amount" class="tip-amount__result">$0.00</span>
         </div>
         <div class="total-amount">
           <span class="total-amount__title">Total <em>/ person</em></span>
-          <img src="./images/icon-dollar.svg" alt="$" class="total-amount__icon">
-          <span class="total-amount__result">0.00</span>
+          <span id="total" class="total-amount__result">$0.00</span>
         </div>
-        <button class="reset">Reset</button>
+        <button class="reset" onclick="reset()">Reset</button>
       </div>
     </article>
   </main>  
@@ -73,5 +68,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="./dist/js/script.js"></script>
 </body>
 </html>

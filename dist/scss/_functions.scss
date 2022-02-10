@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "sass:list";
+
+@import "variables";
+
+/* GET FUNCTIONS */
+
+@function get-width($width-text: "mobile") {
+    @return map.get($width, $width-text);
+}
+
+@function get-primary() {
+    @return $primary;
+}
+
+@function get-neutral($index: 1) {
+    @return list.nth($neutral, $index);
+}
+
+@function get-font-family() {
+    @return $font-family;
+}
+
+@function get-font-weight($weight: 400) {
+    @return map.get($font-weights, $weight);
+}
