@@ -16,7 +16,7 @@ function update_result(){
     let total = 0;
     let no_tip;
 
-    if(people == null || people <= 0) {
+    if(people == null || people <= 0 || tip == null) {
         set_inner_html("tip-amount", "$" + tip_amount.toFixed(2));
         set_inner_html("total", "$" + total.toFixed(2));
         return;
@@ -72,10 +72,16 @@ function tip_input(input, tip_element) {
 }
 
 function reset() {
+    money = null;
+    people = null;
+    tip = null;
+
     clear_tips();
+
     set_value("money-input", null);
     set_value("people-input", null);
     set_value("tip-input", null);
+    update_result()
 }
 
 function main(){
